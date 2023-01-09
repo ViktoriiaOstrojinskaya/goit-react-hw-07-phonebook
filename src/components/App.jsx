@@ -10,7 +10,7 @@ export default function App() {
     <Box>
       <Title title="Phonebook hw-7" />
       <ContactForm />
-      <Title title="Contacts" />
+      <Title title="Contacts hw-7" />
       <Filter />
       <ContactList />
     </Box>
