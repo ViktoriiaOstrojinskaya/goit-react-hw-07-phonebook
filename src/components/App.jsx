@@ -8,9 +8,10 @@ import { Box } from './App.styled';
 export default function App() {
   return (
     <Box>
-      <Title title="Phonebook hw-7" />
+      <Title title="HW-7" />
+      <Title title="Phonebook" />
       <ContactForm />
-      <Title title="Contacts hw-7" />
+      <Title title="Contacts" />
       <Filter />
       <ContactList />
     </Box>
