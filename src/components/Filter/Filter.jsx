@@ -1,11 +1,11 @@
 import { FilterInput } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { setContactsFilter } from 'redux/filterSlice';
-import { getFilters } from 'redux/selectors';
+import { selectFilters } from 'redux/selectors';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const input = useSelector(getFilters);
+  const input = useSelector(selectFilters);
 
   const handleFilter = event => {
     const value = event.target.value.toLowerCase();

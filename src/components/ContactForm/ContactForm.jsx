@@ -1,7 +1,8 @@
 import { nanoid } from '@reduxjs/toolkit';
+import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { Form, FormInput, ButtonAddContact } from './ContactForm.styled';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 
@@ -9,7 +10,7 @@ export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-  const contactList = useSelector(getContacts);
+  const contactList = useSelector(selectContacts);
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -43,7 +44,7 @@ export const ContactForm = () => {
     contactList.find(
       contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
     )
-      ? alert(`${name} is already in contacts`)
+      ? toast.error(`${name} is already in contacts`)
       : dispatch(addContact(newContact));
   };
 
