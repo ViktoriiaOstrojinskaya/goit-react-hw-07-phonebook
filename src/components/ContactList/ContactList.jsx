@@ -22,7 +22,7 @@ export const ContactList = () => {
     <List>
       <ListTitle>
         {filteredContacts.length === 0
-          ? 'Your contacts are empty, let`s create them 📲'
+          ? 'We didn`t find contacts your request 😭'
           : `You have ${filteredContacts.length} contacts`}
       </ListTitle>
       {filteredContacts.map(({ id, name, number }) => (

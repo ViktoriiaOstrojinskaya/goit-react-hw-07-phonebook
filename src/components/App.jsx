@@ -27,7 +27,12 @@ export default function App() {
       <ContactForm />
       <Title title="Contacts" />
       {contactsList.length > 0 && <Filter />}
-      <ContactList />
+      {contactsList.length === 0 ? (
+        <p>Your contacts are empty, let`s create them 🚀</p>
+      ) : (
+        <ContactList />
+      )}
+
       {isLoading && !error && <Loader />}
       <Toaster />
     </Box>
