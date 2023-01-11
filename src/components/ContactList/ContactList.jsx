@@ -18,17 +18,22 @@ export const ContactList = () => {
     contact.name.toLowerCase().includes(filterName.toLowerCase())
   );
 
-  const handleDeleteContact = () => dispatch(deleteContact());
-
   return (
     <List>
-      <ListTitle>You have {filteredContacts.length} contacts</ListTitle>
+      <ListTitle>
+        {filteredContacts.length === 0
+          ? 'Your contacts are empty, let`s create them 📲'
+          : `You have ${filteredContacts.length} contacts`}
+      </ListTitle>
       {filteredContacts.map(({ id, name, number }) => (
         <ListItem key={id}>
           <ContactItem>
             {name}: {number}
           </ContactItem>
-          <ButtonDelete type="button" onClick={handleDeleteContact(id)}>
+          <ButtonDelete
+            type="button"
+            onClick={() => dispatch(deleteContact(id))}
+          >
             Delete
           </ButtonDelete>
         </ListItem>

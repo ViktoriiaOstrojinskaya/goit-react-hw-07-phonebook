@@ -7,7 +7,6 @@ export const List = styled.ul`
 
 export const ListTitle = styled.p`
   margin-top: ${p => p.theme.space[5]}px;
-  font-style: italic;
 `;
 
 export const ContactItem = styled.p`
